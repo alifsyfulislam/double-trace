@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        body,html{
+            height: 90px;
+            width: 728px;
+            position: relative;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            overflow: hidden;
+        }
+
+        .ad_box{
+            height: 90px;
+            width: 728px;
+            background-color: grey;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .road_align{
+            height: 90px;
+            width: 90px;
+        }
+
+        .element_1,.element_2,.element_3{
+            height: 90px;
+            width: 90px;
+            position: absolute;
+            top: 0;
+        }
+
+        .element_1{
+            left: 200px;
+        }
+
+        .element_2{
+            left: 285px;
+        }
+        .element_3{
+            left: 370px;
+        }
+
+
+        .element_4{
+            position: absolute;
+            top: 0;
+            left: 485px;
+        }
+
+        .element_5{
+            position: absolute;
+            top: 30px;
+            left: 175px;
+            transition: 5s linear;
+        }
+
+        .mosjid{
+            height: 60px;
+            width: auto;
+        }
+
+        .car{
+            height: 30px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+<div class="ad_box">
+    <div class="element_1"><img src="road.png" class="road_align"></div>
+    <div class="element_2"><img src="road.png" class="road_align"></div>
+    <div class="element_3"><img src="road.png" class="road_align"></div>
+    <div class="element_4"><img src="mosque_PNG25.png" class="mosjid"></div>
+    <div class="element_5"><img src="car.png" class="car"></div>
+</div>
+
+<script>
+    let element1 = document.querySelector('.element_1');
+    let element2 = document.querySelector('.element_2');
+    let element3 = document.querySelector('.element_3');
+    let element5 = document.querySelector('.element_5');
+
+    var degrees1 = 0;
+    var degrees2 = 0;
+    var degrees3 = 0;
+
+
+    element1.onclick = function () {
+        degrees1+=90;
+        if (degrees1==90){
+            element1.style.transform = "rotate("+degrees1+"deg)";
+            element1.onclick = "null";
+        }
+        else{
+            element1.style.transform = "rotate("+degrees1+"deg)";
+        }
+    }
+    element2.onclick = function () {
+        degrees2+=90;
+        if (degrees2==90){
+            element2.style.transform = "rotate("+degrees2+"deg)";
+            element2.onclick = "null";
+        }
+        else{
+            element2.style.transform = "rotate("+degrees2+"deg)";
+        }
+    }
+
+    element3.onclick = function () {
+        degrees3+=90;
+        if (degrees3==90){
+            element3.style.transform = "rotate("+degrees3+"deg)";
+            element3.onclick = "null";
+        }
+        else{
+            element3.style.transform = "rotate("+degrees3+"deg)";
+        }
+    }
+
+
+    setInterval(function () {
+        checkRoot();
+    },1000)
+
+
+    function checkRoot() {
+        // console.log(degrees1);
+        // console.log(degrees2);
+        // console.log(degrees4);
+        // console.log(degrees5);
+        // console.log(degrees8);
+        // console.log(degrees9);
+        if (degrees1==90 && degrees2==90 && degrees3==90 ){
+            console.log("perfect");
+            element5.style.left = 465+ "px";
+        }
+    }
+</script>
+</body>
+</html>
